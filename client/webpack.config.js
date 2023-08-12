@@ -4,15 +4,16 @@ const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 const { text } = require('express');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
+// : Add and configure workbox plugins for a service worker and manifest file.
+// : Add CSS loaders and babel to webpack.
 
 module.exports = () => {
   return {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
+      cards: './src/js/editor.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -22,7 +23,7 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         template: "./index.html",
         title: "text editor"
-      })
+      }), // <-- Missing comma here
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
@@ -30,8 +31,8 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Text editor',
-        description: 'editor all the notes you need!!',
+        name: 'Text Editor',
+        description: 'Editor all the notes you need!!',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: './',
@@ -48,6 +49,7 @@ module.exports = () => {
     ],
 
     module: {
+      //css loaders
       rules: [
         {
           test: /\.css$/i,
