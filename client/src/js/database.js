@@ -12,7 +12,7 @@ const initdb = async () =>
     },
   });
 
-// Add logic to a method that accepts some content and adds it to the database
+// Add logic to a method that accepts some content and adds it to the database.
 export const putDb = async (content) => {
   console.error('put in the database');
   // Create a connection to the database database and version we want to use.
