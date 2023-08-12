@@ -18,7 +18,7 @@ butInstall.addEventListener('click', async () => {
         return;
     }
 
-    // Show prompt
+    // Show prompt  
     promptEvent.prompt();
 
     // Reset the deferred prompt variable, it can only be used once.
