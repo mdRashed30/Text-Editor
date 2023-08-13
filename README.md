@@ -81,8 +81,7 @@ Steps to run Application :
 
 ## Screenshots
 
-![HomeScreenShots](media/image1.png)
-![HomeScreenShots](media/image2.png)
+![Text-Editor](media/Text-Editor.png)
 
 ## Heroku:
 
